@@ -131,7 +131,7 @@ internal class FeedViewController: UIViewController,UITableViewDelegate, UITable
             
             let comment = comments[indexPath.row-1]
             
-            cell.nameLabel.text = comment["text"] as? String
+            cell.commentLabel.text = comment["text"] as? String
             
             let user = comment["author"] as! PFUser
             cell.nameLabel.text = user.username
@@ -145,7 +145,7 @@ internal class FeedViewController: UIViewController,UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
         
         if indexPath.row == comments.count + 1{
