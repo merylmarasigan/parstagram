@@ -25,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               )
         
         
-        if PFUser.current() != nil{
-            let main = UIStoryboard(name:"Main", bundle:nil)
-            let feedNavigationController = main.instantiateViewController(identifier: "FeedNavigationController")
-                        
-        }
-        
         return true
     }
 
